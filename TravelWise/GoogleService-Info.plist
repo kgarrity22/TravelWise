@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>98736210158-uln2f78mn248nevaa474332jlb2mj28l.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.98736210158-uln2f78mn248nevaa474332jlb2mj28l</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBmjepEPu3KYaEzKMwZ8ccDHAlnGPL6Hl8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>98736210158</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.garrity.TravelWise</string>
+	<key>PROJECT_ID</key>
+	<string>travello-d46ea</string>
+	<key>STORAGE_BUCKET</key>
+	<string>travello-d46ea.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:98736210158:ios:689029ba297013c377b3ff</string>
+	<key>DATABASE_URL</key>
+	<string>https://travello-d46ea.firebaseio.com</string>
+</dict>
+</plist>

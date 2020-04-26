@@ -3,19 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E1ECB192454B734004BF45B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E1ECB182454B734004BF45B /* GoogleService-Info.plist */; };
+		7E977FDA2456088B007953BA /* LandmarkInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E977FD92456088B007953BA /* LandmarkInfoViewController.swift */; };
 		7EB68D272454A2E9005F56FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB68D262454A2E9005F56FF /* AppDelegate.swift */; };
 		7EB68D292454A2E9005F56FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB68D282454A2E9005F56FF /* SceneDelegate.swift */; };
 		7EB68D2B2454A2E9005F56FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB68D2A2454A2E9005F56FF /* ViewController.swift */; };
 		7EB68D2E2454A2E9005F56FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB68D2C2454A2E9005F56FF /* Main.storyboard */; };
 		7EB68D302454A2EF005F56FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EB68D2F2454A2EF005F56FF /* Assets.xcassets */; };
 		7EB68D332454A2EF005F56FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB68D312454A2EF005F56FF /* LaunchScreen.storyboard */; };
+		C9935012AAE3C10408CC7999 /* Pods_TravelWise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2514E79D5D0577B94D93B3B /* Pods_TravelWise.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1408837DA77C955151F1A9A9 /* Pods-TravelWise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelWise.release.xcconfig"; path = "Target Support Files/Pods-TravelWise/Pods-TravelWise.release.xcconfig"; sourceTree = "<group>"; };
+		7E1ECB182454B734004BF45B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7E977FD92456088B007953BA /* LandmarkInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkInfoViewController.swift; sourceTree = "<group>"; };
 		7EB68D232454A2E9005F56FF /* TravelWise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelWise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB68D262454A2E9005F56FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EB68D282454A2E9005F56FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +30,8 @@
 		7EB68D2F2454A2EF005F56FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EB68D322454A2EF005F56FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7EB68D342454A2EF005F56FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2514E79D5D0577B94D93B3B /* Pods_TravelWise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelWise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0EFC24621EBC0BB3E022022 /* Pods-TravelWise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelWise.debug.xcconfig"; path = "Target Support Files/Pods-TravelWise/Pods-TravelWise.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9935012AAE3C10408CC7999 /* Pods_TravelWise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F4A05FB10B8BAD7711D802B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D0EFC24621EBC0BB3E022022 /* Pods-TravelWise.debug.xcconfig */,
+				1408837DA77C955151F1A9A9 /* Pods-TravelWise.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7EB68D1A2454A2E9005F56FF = {
 			isa = PBXGroup;
 			children = (
 				7EB68D252454A2E9005F56FF /* TravelWise */,
 				7EB68D242454A2E9005F56FF /* Products */,
+				0F4A05FB10B8BAD7711D802B /* Pods */,
+				EBA5C2B1650A3EDA84C9357A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +79,22 @@
 				7EB68D262454A2E9005F56FF /* AppDelegate.swift */,
 				7EB68D282454A2E9005F56FF /* SceneDelegate.swift */,
 				7EB68D2A2454A2E9005F56FF /* ViewController.swift */,
+				7E977FD92456088B007953BA /* LandmarkInfoViewController.swift */,
 				7EB68D2C2454A2E9005F56FF /* Main.storyboard */,
 				7EB68D2F2454A2EF005F56FF /* Assets.xcassets */,
 				7EB68D312454A2EF005F56FF /* LaunchScreen.storyboard */,
 				7EB68D342454A2EF005F56FF /* Info.plist */,
+				7E1ECB182454B734004BF45B /* GoogleService-Info.plist */,
 			);
 			path = TravelWise;
+			sourceTree = "<group>";
+		};
+		EBA5C2B1650A3EDA84C9357A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2514E79D5D0577B94D93B3B /* Pods_TravelWise.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7EB68D372454A2EF005F56FF /* Build configuration list for PBXNativeTarget "TravelWise" */;
 			buildPhases = (
+				ECF6BF6A8520DDD064435792 /* [CP] Check Pods Manifest.lock */,
 				7EB68D1F2454A2E9005F56FF /* Sources */,
 				7EB68D202454A2E9005F56FF /* Frameworks */,
 				7EB68D212454A2E9005F56FF /* Resources */,
+				515EE01D12CEE0D55DA25EC4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EB68D332454A2EF005F56FF /* LaunchScreen.storyboard in Resources */,
+				7E1ECB192454B734004BF45B /* GoogleService-Info.plist in Resources */,
 				7EB68D302454A2EF005F56FF /* Assets.xcassets in Resources */,
 				7EB68D2E2454A2E9005F56FF /* Main.storyboard in Resources */,
 			);
@@ -133,11 +166,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		515EE01D12CEE0D55DA25EC4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelWise/Pods-TravelWise-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelWise/Pods-TravelWise-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelWise/Pods-TravelWise-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECF6BF6A8520DDD064435792 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TravelWise-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7EB68D1F2454A2E9005F56FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E977FDA2456088B007953BA /* LandmarkInfoViewController.swift in Sources */,
 				7EB68D2B2454A2E9005F56FF /* ViewController.swift in Sources */,
 				7EB68D272454A2E9005F56FF /* AppDelegate.swift in Sources */,
 				7EB68D292454A2E9005F56FF /* SceneDelegate.swift in Sources */,
@@ -282,6 +358,7 @@
 		};
 		7EB68D382454A2EF005F56FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0EFC24621EBC0BB3E022022 /* Pods-TravelWise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +377,7 @@
 		};
 		7EB68D392454A2EF005F56FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1408837DA77C955151F1A9A9 /* Pods-TravelWise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
