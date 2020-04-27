@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  TravelWise
 //
-//  Created by Kathleen Garrity on 4/25/20.
+//  Created by Kathleen Garrity.
 //  Copyright © 2020 Kathleen Garrity. All rights reserved.
 //
 
