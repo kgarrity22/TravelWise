@@ -27,7 +27,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="mb0-4t-vNJ" kind="show" identifier="ShowLandmark" id="8IP-03-KMc"/>
+                                            <segue destination="mb0-4t-vNJ" kind="show" identifier="ShowLandmark" id="Dy4-iX-nxf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -74,6 +74,16 @@
                                 <rect key="frame" x="20" y="71" width="374" height="701"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsl-V7-P6u">
+                                <rect key="frame" x="20" y="767" width="123" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Camera" image="camera" catalog="system">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="cameraPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8mk-Os-1VD"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vlh-Qe-PBX">
                                 <rect key="frame" x="281" y="780" width="113" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -85,22 +95,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g92-oF-Oj5">
-                                <rect key="frame" x="82" y="810" width="284" height="30"/>
+                                <rect key="frame" x="80" y="729" width="284" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Identify this photo"/>
                                 <connections>
                                     <action selector="identifyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JGA-O9-mp0"/>
-                                    <segue destination="mb0-4t-vNJ" kind="show" identifier="AddLandmark" id="Ijx-Ps-wSc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsl-V7-P6u">
-                                <rect key="frame" x="20" y="767" width="123" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Camera" image="camera" catalog="system">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="cameraPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8mk-Os-1VD"/>
+                                    <segue destination="mb0-4t-vNJ" kind="show" identifier="AddLandmark" id="XA0-y5-vI6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -108,7 +108,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Sz3-D7-YiY">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="v5V-Wl-gtD"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="v5V-Wl-gtD">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="BYZ-38-t0r" id="gVn-Lj-o4r"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cameraButton" destination="vsl-V7-P6u" id="Zfe-mk-pBy"/>
@@ -119,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1371.0144927536232" y="-449.33035714285711"/>
+            <point key="canvasLocation" x="1699" y="-475"/>
         </scene>
         <!--Landmark Info View Controller-->
         <scene sceneID="l4D-lI-hZ9">
@@ -235,7 +239,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="landmark history can be added here!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uOk-3d-Gkk">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uOk-3d-Gkk">
                                                     <rect key="frame" x="20" y="11" width="374" height="278"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -283,9 +287,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="87S-VG-FK6">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fJ9-2d-2Cd">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ONW-5T-gDu">
                             <connections>
-                                <action selector="cancelButtonPressed:" destination="mb0-4t-vNJ" id="swC-FE-cT0"/>
+                                <action selector="cancelButtonPressed:" destination="mb0-4t-vNJ" id="PeT-yH-Jg0"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="UGL-gZ-ca7">
@@ -303,7 +307,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhK-gR-V0D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2634.7826086956525" y="442.63392857142856"/>
+            <point key="canvasLocation" x="2146" y="381"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cfF-9H-fec">
@@ -329,7 +333,7 @@
         <!--Navigation Controller-->
         <scene sceneID="fsJ-xe-CSe">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TAM-H3-EwE" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="TAM-H3-EwE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q4E-YJ-kMQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -337,6 +341,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ub2-ke-aXm">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -345,7 +350,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jwt-U7-U1S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="422" y="-448"/>
+            <point key="canvasLocation" x="652" y="-449"/>
         </scene>
     </scenes>
     <resources>
@@ -355,6 +360,6 @@
         <image name="photo.fill" catalog="system" width="64" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8IP-03-KMc"/>
+        <segue reference="XA0-y5-vI6"/>
     </inferredMetricsTieBreakers>
 </document>

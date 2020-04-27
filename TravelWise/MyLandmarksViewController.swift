@@ -53,7 +53,7 @@ class MyLandmarksViewController: UIViewController {
         }
     }
 
-    // VITAL: This gist includes key changes to make sure "cancel" works with iOS 13.
+    
     func signIn() {
         let providers: [FUIAuthProvider] = [
             FUIGoogleAuth(),

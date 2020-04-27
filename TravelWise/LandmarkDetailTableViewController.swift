@@ -45,18 +45,34 @@ class LandmarkDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        
+        
         if landmark == nil {
             landmark = Landmark()
         }
         
+        // if we have just chosen an image and are coming from add image
+        if landmarkImage != nil {
+            self.landmark.placeImage = landmarkImage
+        } else {
+            landmark.loadImage {
+                self.landmarkImageView.image = self.landmark.placeImage
+            }
+        }
         
         
         
         let region = MKCoordinateRegion(center: landmark.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
         mapView.setRegion(region, animated: true)
         
+        // if nobody has entered anything yet, put a message in there
+        if landmarkHistoryTextView.text == "" {
+            landmarkHistoryTextView.text = "Nobody has entered historical information about \(landmark.landmarkName) yet. Be the first to contribute!"
+        } else {
+            landmarkHistoryTextView.isEditable = false
+        }
         
+        //detectCloudLandmarks(image: landmarkImage)
         updateUserInterface()
         
         
@@ -123,7 +139,7 @@ class LandmarkDetailTableViewController: UITableViewController {
         
         let imageMetadata = VisionImageMetadata()
         
-        self.landmark.placeImage = image
+        //self.landmark.placeImage = image
         
         // initialize a visionimage with input image
         let visionImage = VisionImage(image: image)
@@ -149,6 +165,7 @@ class LandmarkDetailTableViewController: UITableViewController {
             print("🏵🏵🏵🏵 Landmarks: \(landmarks)")
             
             self.landmarkNameLabel.text = landmarks[0].landmark ?? "no name"
+            self.landmarkName = landmarks[0].landmark ?? "no name"
 //            self.landmark.landmarkName =
 //            self.landmark.coordinate.latitude = CLLocationDegrees(landmarks[0].locations![0].latitude!)
 //            self.landmark.coordinate.longitude = CLLocationDegrees(landmarks[0].locations![0].longitude!)
@@ -161,10 +178,11 @@ class LandmarkDetailTableViewController: UITableViewController {
             print("Landmark location: 🌎 latitude: \(String(describing: landmarks[0].locations![0].latitude!)), longitude: \(String(describing: landmarks[0].locations![0].longitude!))")
             
             
+            
             //self.landmarkName = landmarks[0].landmark ?? "Unknown Landmark"
             
-            
         }
+        
     }
     
 

@@ -96,13 +96,27 @@ class AddLandmarkViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func identifyButtonPressed(_ sender: UIButton) {
         
         self.imageToPass = imageView.image
-        performSegue(withIdentifier: "AddLandmark", sender: self)
+//        performSegue(withIdentifier: "AddLandmark", sender: self)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var viewController = segue.destination as! LandmarkDetailTableViewController
         viewController.landmarkImage = self.imageToPass
+//        viewController.detectCloudLandmarks(image: self.imageToPass)
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        leaveViewController()
+    }
+    
+    func leaveViewController() {
+        let isPresentingInAddMode = presentingViewController is UINavigationController
+        if isPresentingInAddMode {
+            dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
     }
     
 }

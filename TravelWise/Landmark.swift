@@ -162,5 +162,23 @@ class Landmark: NSObject, MKAnnotation {
         }
     }
     
+    func loadImage(completed: @escaping () -> ()) {
+        let storage = Storage.storage()
+        let storageRef = storage.reference().child(self.documentID).child(self.placeImageUUID)
+        
+        storageRef.getData(maxSize: 5*1024*1024) { (data, error) in
+            guard error == nil else {
+                print("Error: Could not load image from bucket \(self.documentID) for the file \(self.placeImageUUID)")
+                return completed()
+            }
+            guard let downloadedImage = UIImage(data: data!) else {
+                print("Error: Could not convert data to image from bucket \(self.documentID) for the file \(self.placeImageUUID)")
+                return completed()
+            }
+            self.placeImage = downloadedImage
+            completed()
+        }
+    }
+    
 }
 
