@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Places View Controller-->
+        <!--My Landmarks View Controller-->
         <scene sceneID="cYP-7K-lOo">
             <objects>
-                <viewController id="6ZA-zw-8yw" customClass="MyPlacesViewController" customModule="TravelWise" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6ZA-zw-8yw" customClass="MyLandmarksViewController" customModule="TravelWise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GPD-ze-csf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,6 +26,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="mb0-4t-vNJ" kind="show" identifier="ShowLandmark" id="8IP-03-KMc"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -45,7 +48,11 @@
                                 <action selector="signOutBarButtonPressed:" destination="6ZA-zw-8yw" id="bgB-oa-IdX"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DUD-DC-gX0"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DUD-DC-gX0">
+                            <connections>
+                                <segue destination="TAM-H3-EwE" kind="presentation" modalPresentationStyle="fullScreen" id="ib1-ft-Slm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Kd9-8t-u7Z" id="Afu-d2-omB"/>
@@ -53,32 +60,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JhR-gE-kSE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134.78260869565219" y="122.54464285714285"/>
+            <point key="canvasLocation" x="-477" y="443"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Landmark View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TravelWise" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AddLandmarkViewController" customModule="TravelWise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsl-V7-P6u">
-                                <rect key="frame" x="20" y="840" width="123" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Camera" image="camera" catalog="system">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="cameraPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8mk-Os-1VD"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="monuments" translatesAutoresizingMaskIntoConstraints="NO" id="FlV-6A-E8R">
                                 <rect key="frame" x="20" y="71" width="374" height="701"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vlh-Qe-PBX">
-                                <rect key="frame" x="281" y="840" width="113" height="22"/>
+                                <rect key="frame" x="281" y="780" width="113" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Library" image="photo.fill" catalog="system">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -88,35 +85,48 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g92-oF-Oj5">
-                                <rect key="frame" x="65" y="802" width="284" height="30"/>
+                                <rect key="frame" x="82" y="810" width="284" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Identify this photo"/>
                                 <connections>
                                     <action selector="identifyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JGA-O9-mp0"/>
+                                    <segue destination="Zra-W4-sur" kind="presentation" identifier="AddLandmark" modalPresentationStyle="fullScreen" id="ze7-Ih-sAb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsl-V7-P6u">
+                                <rect key="frame" x="20" y="767" width="123" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Camera" image="camera" catalog="system">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="cameraPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8mk-Os-1VD"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.63723759573700178" green="1" blue="0.83261530202509626" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Sz3-D7-YiY">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="v5V-Wl-gtD"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="cameraButton" destination="vsl-V7-P6u" id="Zfe-mk-pBy"/>
                         <outlet property="identifyButton" destination="g92-oF-Oj5" id="A2U-SV-Q6g"/>
                         <outlet property="imageView" destination="FlV-6A-E8R" id="Ir9-6s-0DX"/>
                         <outlet property="libraryButton" destination="Vlh-Qe-PBX" id="wGn-lq-mlX"/>
-                        <segue destination="c4z-2a-daS" kind="show" identifier="ShowLandmarkInfo" id="7ac-Hb-x8d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="117.85714285714285"/>
+            <point key="canvasLocation" x="1371.0144927536232" y="-449.33035714285711"/>
         </scene>
         <!--Landmark Info View Controller-->
         <scene sceneID="l4D-lI-hZ9">
             <objects>
                 <viewController id="c4z-2a-daS" customClass="LandmarkInfoViewController" customModule="TravelWise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0s3-OJ-dTd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bos" translatesAutoresizingMaskIntoConstraints="NO" id="aRy-BQ-zcn">
@@ -149,17 +159,124 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="o3B-T7-vKj"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1CX-qy-WDG"/>
-                    <connections>
-                        <outlet property="landmarkDefinitionLabel" destination="I8E-A9-QAM" id="Goo-Nr-cN9"/>
-                        <outlet property="landmarkHistoryTextView" destination="u54-IJ-Ecm" id="N2M-DI-Ar7"/>
-                        <outlet property="landmarkImageView" destination="aRy-BQ-zcn" id="WFK-07-R22"/>
-                        <outlet property="landmarkNameLabel" destination="koT-fo-wpq" id="pyK-Pt-6Ol"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="1CX-qy-WDG">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OFf-mJ-l5k"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Ma3-mC-fPM"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TEH-5i-tYu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2084.057971014493" y="117.85714285714285"/>
+            <point key="canvasLocation" x="2255" y="-1873"/>
+        </scene>
+        <!--Landmark Detail Table View Controller-->
+        <scene sceneID="yom-iT-SrP">
+            <objects>
+                <tableViewController id="mb0-4t-vNJ" customClass="LandmarkDetailTableViewController" customModule="TravelWise" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="h7R-iI-X6D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Image" id="H87-WJ-zYo">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="300" id="eIn-PE-n2K">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eIn-PE-n2K" id="Pac-gP-Zs3">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rZc-jT-zDO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Landmark Name" id="UQc-6r-lPk">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="99E-fF-huy">
+                                        <rect key="frame" x="0.0" y="384" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="99E-fF-huy" id="cS3-Xu-dJg">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="landmark's name!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzB-FL-DfY">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="History" id="e6Z-DT-Aqf">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="4ED-1Y-pMv">
+                                        <rect key="frame" x="0.0" y="483.5" width="414" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4ED-1Y-pMv" id="spO-iT-f1y">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="landmark history can be added here!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uOk-3d-Gkk">
+                                                    <rect key="frame" x="20" y="11" width="374" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Location" id="cVQ-Zo-6Ow">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="2p8-Zd-126">
+                                        <rect key="frame" x="0.0" y="689.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2p8-Zd-126" id="HX7-XY-y1u">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="mb0-4t-vNJ" id="n4T-cP-gLv"/>
+                            <outlet property="delegate" destination="mb0-4t-vNJ" id="u8l-cO-G1D"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="87S-VG-FK6">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fJ9-2d-2Cd">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="mb0-4t-vNJ" id="swC-FE-cT0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="UGL-gZ-ca7">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="mb0-4t-vNJ" id="Axp-1j-rBJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="landmarkHistoryTextView" destination="uOk-3d-Gkk" id="8Vn-dx-StD"/>
+                        <outlet property="landmarkImageView" destination="rZc-jT-zDO" id="gIQ-Wj-MXO"/>
+                        <outlet property="landmarkNameLabel" destination="UzB-FL-DfY" id="3Kx-Vt-0hV"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nhK-gR-V0D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2634.7826086956525" y="442.63392857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cfF-9H-fec">
@@ -171,13 +288,58 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BFs-kk-eNz">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="6ZA-zw-8yw" kind="relationship" relationship="rootViewController" id="qI3-E6-1hX"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="La7-Y9-YVX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-775.36231884057975" y="122.54464285714285"/>
+            <point key="canvasLocation" x="-1465" y="118"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fsJ-xe-CSe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TAM-H3-EwE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q4E-YJ-kMQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ub2-ke-aXm">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tNS-e9-dxv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jwt-U7-U1S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="422" y="-448"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FLx-jz-iKi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zra-W4-sur" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IEP-T1-o0j">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T3q-Lf-cLR">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="mb0-4t-vNJ" kind="relationship" relationship="rootViewController" id="OMD-ks-9Ih"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s0M-gV-jr1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2349" y="-327"/>
         </scene>
     </scenes>
     <resources>
@@ -186,4 +348,7 @@
         <image name="monuments" width="830" height="375"/>
         <image name="photo.fill" catalog="system" width="64" height="46"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8IP-03-KMc"/>
+    </inferredMetricsTieBreakers>
 </document>

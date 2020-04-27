@@ -12,10 +12,11 @@ import Firebase
 import FirebaseUI
 import GoogleSignIn
 
-class MyPlacesViewController: UIViewController {
+class MyLandmarksViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var places = ["Eiffel Tower", "London Eye", "Arc de Triomf"]
+    //var places = ["Eiffel Tower", "London Eye", "Arc de Triomf"]
+    var landmarks: Landmarks!
     
     var authUI:FUIAuth!
     
@@ -25,13 +26,31 @@ class MyPlacesViewController: UIViewController {
         authUI = FUIAuth.defaultAuthUI()
         authUI.delegate = self
         
+        landmarks = Landmarks()
+        
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        landmarks.loadData {
+            self.tableView.reloadData()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         signIn()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowLandmark" {
+            let destination = segue.destination as! LandmarkDetailTableViewController
+            let selectedPath = tableView.indexPathForSelectedRow!
+            destination.landmark = landmarks.landmarkArray[selectedPath.row]
+        }
     }
 
     // VITAL: This gist includes key changes to make sure "cancel" works with iOS 13.
@@ -64,21 +83,21 @@ class MyPlacesViewController: UIViewController {
     
 }
 
-extension MyPlacesViewController: UITableViewDelegate, UITableViewDataSource {
+extension MyLandmarksViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return places.count
+        return landmarks.landmarkArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyPlacesCell", for: indexPath)
-        cell.textLabel?.text = places[indexPath.row]
+        cell.textLabel?.text = landmarks.landmarkArray[indexPath.row].landmarkName
         return cell
     }
     
     
 }
 
-extension MyPlacesViewController: FUIAuthDelegate {
+extension MyLandmarksViewController: FUIAuthDelegate {
     func application(_ app: UIApplication, open url: URL,
                      options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
         let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as! String?

@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import Firebase
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddLandmarkViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIButton!
@@ -92,15 +92,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
        
     
     }
+    // image stuff here could potentially cause an issue
     @IBAction func identifyButtonPressed(_ sender: UIButton) {
         
         self.imageToPass = imageView.image
-        performSegue(withIdentifier: "ShowLandmarkInfo", sender: self)
+        performSegue(withIdentifier: "AddLandmark", sender: self)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var viewController = segue.destination as! LandmarkInfoViewController
+        var viewController = segue.destination as! LandmarkDetailTableViewController
         viewController.landmarkImage = self.imageToPass
     }
     

@@ -6,6 +6,7 @@
 //  Copyright © 2020 Kathleen Garrity. All rights reserved.
 //
 
+// need a bunch of this code, but a lot of it is going to be happening in Landmark detail table view controller instead
 import UIKit
 import Firebase
 import AVKit
@@ -103,15 +104,7 @@ class LandmarkInfoViewController: UIViewController {
             
         }
     }
-    
-    
-    
-    func formatResults() {
-        // update name label
-        // update definition
-        // update history
-        
-    }
+
     
     
 }
