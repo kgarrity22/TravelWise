@@ -10,15 +10,20 @@ import UIKit
 import Firebase
 import AVKit
 import CoreLocation
+import GooglePlaces
+import MapKit
 
 class LandmarkDetailTableViewController: UITableViewController {
 
     @IBOutlet weak var landmarkImageView: UIImageView!
     @IBOutlet weak var landmarkNameLabel: UILabel!
     @IBOutlet weak var landmarkHistoryTextView: UITextView!
+    @IBOutlet weak var mapView: MKMapView!
     
     
     var landmark: Landmark!
+    
+    var regionDistance: CLLocationDistance = 10_000
     
     // will need an outlet for the map view
 
@@ -39,11 +44,19 @@ class LandmarkDetailTableViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         if landmark == nil {
             landmark = Landmark()
         }
-        detectCloudLandmarks(image: landmarkImage)
+        
+        
+        
+        
+        let region = MKCoordinateRegion(center: landmark.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        mapView.setRegion(region, animated: true)
+        
+        
         updateUserInterface()
         
         
@@ -51,14 +64,25 @@ class LandmarkDetailTableViewController: UITableViewController {
     
     // don't think I need this function if I run the UI updates in the detection function
     func updateUserInterface() {
-        // still need to update the image and the the map here, but don't have those set up yet
+        detectCloudLandmarks(image: landmarkImage)
+        
         landmarkNameLabel.text = landmark.landmarkName
         landmarkHistoryTextView.text = landmark.landmarkHistory
+        landmarkImageView.image = landmark.placeImage
+        
+        updateMap()
+    }
+    
+    func updateMap() {
+        mapView.removeAnnotations(mapView.annotations)
+        mapView.addAnnotation(landmark)
+        mapView.setCenter(landmark.coordinate, animated: true)
     }
     
     func updateFromUserInterface() {
         landmark.landmarkName = landmarkNameLabel.text!
         landmark.landmarkHistory = landmarkHistoryTextView.text
+        //landmarkImage = landmarkImageView.image
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
@@ -79,7 +103,13 @@ class LandmarkDetailTableViewController: UITableViewController {
         updateFromUserInterface()
         landmark.saveData { success in
             if success {
-                self.leaveViewController()
+                self.landmark.saveImage { (success) in
+                    if !success {
+                        print("WARNING: Could not save image")
+                    }
+                    self.leaveViewController()
+                }
+                
             } else {
                 print("*** ERROR: Couldn't leave this view controller because data wasn't saved.")
             }
@@ -93,6 +123,8 @@ class LandmarkDetailTableViewController: UITableViewController {
         
         let imageMetadata = VisionImageMetadata()
         
+        self.landmark.placeImage = image
+        
         // initialize a visionimage with input image
         let visionImage = VisionImage(image: image)
         visionImage.metadata = imageMetadata
@@ -100,7 +132,7 @@ class LandmarkDetailTableViewController: UITableViewController {
         // create landmark detector
         let options = VisionCloudDetectorOptions()
         options.modelType = .latest
-        options.maxResults = 5
+        options.maxResults = 1
         
         // initialize landmark detector
         let cloudDetector = vision.cloudLandmarkDetector(options: options)
@@ -118,8 +150,11 @@ class LandmarkDetailTableViewController: UITableViewController {
             
             self.landmarkNameLabel.text = landmarks[0].landmark ?? "no name"
 //            self.landmark.landmarkName =
-            self.landmark.coordinate.latitude = CLLocationDegrees(landmarks[0].locations![0].latitude!)
-            self.landmark.coordinate.longitude = CLLocationDegrees(landmarks[0].locations![0].longitude!)
+//            self.landmark.coordinate.latitude = CLLocationDegrees(landmarks[0].locations![0].latitude!)
+//            self.landmark.coordinate.longitude = CLLocationDegrees(landmarks[0].locations![0].longitude!)
+            
+            // update the coordinate var
+            self.landmark.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(landmarks[0].locations![0].latitude!), longitude: CLLocationDegrees(landmarks[0].locations![0].longitude!))
             
             
             //print("Landmark name: \(self.landmarkNameLabel.text!)")

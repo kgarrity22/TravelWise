@@ -14,7 +14,6 @@
 		7E4DFE7624572402005E11C4 /* Landmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DFE7524572402005E11C4 /* Landmarks.swift */; };
 		7E6B6557245661B300AF3414 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6B6556245661B300AF3414 /* APIKeys.swift */; };
 		7E6B65592456622800AF3414 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6B65582456622800AF3414 /* Words.swift */; };
-		7E977FDA2456088B007953BA /* LandmarkInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E977FD92456088B007953BA /* LandmarkInfoViewController.swift */; };
 		7EB68D272454A2E9005F56FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB68D262454A2E9005F56FF /* AppDelegate.swift */; };
 		7EB68D292454A2E9005F56FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB68D282454A2E9005F56FF /* SceneDelegate.swift */; };
 		7EB68D2B2454A2E9005F56FF /* AddLandmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB68D2A2454A2E9005F56FF /* AddLandmarkViewController.swift */; };
@@ -33,7 +32,6 @@
 		7E4DFE7524572402005E11C4 /* Landmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmarks.swift; sourceTree = "<group>"; };
 		7E6B6556245661B300AF3414 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		7E6B65582456622800AF3414 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
-		7E977FD92456088B007953BA /* LandmarkInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkInfoViewController.swift; sourceTree = "<group>"; };
 		7EB68D232454A2E9005F56FF /* TravelWise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelWise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB68D262454A2E9005F56FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EB68D282454A2E9005F56FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 				7E1ECB182454B734004BF45B /* GoogleService-Info.plist */,
 				7E6B6556245661B300AF3414 /* APIKeys.swift */,
 				7E6B65582456622800AF3414 /* Words.swift */,
-				7E977FD92456088B007953BA /* LandmarkInfoViewController.swift */,
 			);
 			path = TravelWise;
 			sourceTree = "<group>";
@@ -249,7 +246,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E977FDA2456088B007953BA /* LandmarkInfoViewController.swift in Sources */,
 				7E6B6557245661B300AF3414 /* APIKeys.swift in Sources */,
 				7EB68D2B2454A2E9005F56FF /* AddLandmarkViewController.swift in Sources */,
 				7E4DFE7624572402005E11C4 /* Landmarks.swift in Sources */,
