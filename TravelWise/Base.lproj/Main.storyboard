@@ -90,7 +90,7 @@
                                 <state key="normal" title="Identify this photo"/>
                                 <connections>
                                     <action selector="identifyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JGA-O9-mp0"/>
-                                    <segue destination="Zra-W4-sur" kind="presentation" identifier="AddLandmark" modalPresentationStyle="fullScreen" id="ze7-Ih-sAb"/>
+                                    <segue destination="mb0-4t-vNJ" kind="show" identifier="AddLandmark" id="Ijx-Ps-wSc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsl-V7-P6u">
@@ -320,27 +320,6 @@
             </objects>
             <point key="canvasLocation" x="422" y="-448"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="FLx-jz-iKi">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zra-W4-sur" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IEP-T1-o0j">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T3q-Lf-cLR">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="mb0-4t-vNJ" kind="relationship" relationship="rootViewController" id="OMD-ks-9Ih"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="s0M-gV-jr1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2349" y="-327"/>
-        </scene>
     </scenes>
     <resources>
         <image name="bos" width="275" height="183"/>
@@ -349,6 +328,6 @@
         <image name="photo.fill" catalog="system" width="64" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8IP-03-KMc"/>
+        <segue reference="Ijx-Ps-wSc"/>
     </inferredMetricsTieBreakers>
 </document>

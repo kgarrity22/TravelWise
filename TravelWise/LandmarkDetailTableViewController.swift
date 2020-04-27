@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import AVKit
+import CoreLocation
 
 class LandmarkDetailTableViewController: UITableViewController {
 
@@ -42,6 +43,7 @@ class LandmarkDetailTableViewController: UITableViewController {
         if landmark == nil {
             landmark = Landmark()
         }
+        detectCloudLandmarks(image: landmarkImage)
         updateUserInterface()
         
         
@@ -107,20 +109,24 @@ class LandmarkDetailTableViewController: UITableViewController {
             guard error == nil, let landmarks = landmarks, !landmarks.isEmpty else {
                 let errorString = error?.localizedDescription ?? "unknown error"
                 self.resultsText = "Cloud landmark detection failed with error \(errorString)"
-                // showResults()
+                
                 return
             }
             
             // recognized landmarks
             print("🏵🏵🏵🏵 Landmarks: \(landmarks)")
+            
             self.landmarkNameLabel.text = landmarks[0].landmark ?? "no name"
+//            self.landmark.landmarkName =
+            self.landmark.coordinate.latitude = CLLocationDegrees(landmarks[0].locations![0].latitude!)
+            self.landmark.coordinate.longitude = CLLocationDegrees(landmarks[0].locations![0].longitude!)
             
             
             //print("Landmark name: \(self.landmarkNameLabel.text!)")
             print("Landmark location: 🌎 latitude: \(String(describing: landmarks[0].locations![0].latitude!)), longitude: \(String(describing: landmarks[0].locations![0].longitude!))")
             
             
-            self.landmarkName = landmarks[0].landmark ?? "Unknown Landmark"
+            //self.landmarkName = landmarks[0].landmark ?? "Unknown Landmark"
             
             
         }
