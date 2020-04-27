@@ -44,7 +44,7 @@ class LandmarkInfoViewController: UIViewController {
         if self.landmarkName != "Unknown Landmark" {
             word.getData(wordToDefine: self.landmarkName) {
                 DispatchQueue.main.async {
-                    self.landmarkDefinitionLabel.text = self.word.definitionHolder
+                    self.landmarkDefinitionLabel.text = self.word.definition
                 }
             }
         }
@@ -95,7 +95,7 @@ class LandmarkInfoViewController: UIViewController {
             //let landmarkDict: [String: String] = [:]
             
             print("Landmark name: \(self.landmarkNameLabel.text!)")
-            print("Landmark location: 🌎 latitude: \(String(describing: landmarks[0].locations?[0].latitude!)), longitude: \(String(describing: landmarks[0].locations?[0].longitude!))")
+            print("Landmark location: 🌎 latitude: \(String(describing: landmarks[0].locations![0].latitude!)), longitude: \(String(describing: landmarks[0].locations![0].longitude!))")
             
             self.landmarkNameLabel.text = landmarks[0].landmark ?? "no name"
             self.landmarkName = landmarks[0].landmark ?? "Unknown Landmark"

@@ -10,17 +10,19 @@ import Foundation
 
 class Word: Codable {
     
+    var word = ""
 //    struct Results: Codable {
 //        var definition = ""
 //    }
     
-    //var results: [Results] = []
+    
+//    var results: [Results] = []
     var definition = ""
     
     
     func getData(wordToDefine: String, completed: @escaping ()->()) {
         
-        let word = wordToDefine.replacingOccurrences(of: " ", with: "%20")
+        let wordEntered = wordToDefine.replacingOccurrences(of: " ", with: "%20")
         //let word = wordToDefine
         
         let url = URL(string: "https://wordsapiv1.p.mashape.com/")

@@ -115,6 +115,7 @@
 				7EB68D202454A2E9005F56FF /* Frameworks */,
 				7EB68D212454A2E9005F56FF /* Resources */,
 				515EE01D12CEE0D55DA25EC4 /* [CP] Embed Pods Frameworks */,
+				72BB56B8800C27F687CBDE28 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,6 +189,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelWise/Pods-TravelWise-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72BB56B8800C27F687CBDE28 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelWise/Pods-TravelWise-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelWise/Pods-TravelWise-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelWise/Pods-TravelWise-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		ECF6BF6A8520DDD064435792 /* [CP] Check Pods Manifest.lock */ = {
