@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7E1ECB192454B734004BF45B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E1ECB182454B734004BF45B /* GoogleService-Info.plist */; };
+		7E4DFE6E2456AE05005E11C4 /* MyPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DFE6D2456AE05005E11C4 /* MyPlacesViewController.swift */; };
 		7E6B6557245661B300AF3414 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6B6556245661B300AF3414 /* APIKeys.swift */; };
 		7E6B65592456622800AF3414 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6B65582456622800AF3414 /* Words.swift */; };
 		7E977FDA2456088B007953BA /* LandmarkInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E977FD92456088B007953BA /* LandmarkInfoViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		1408837DA77C955151F1A9A9 /* Pods-TravelWise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelWise.release.xcconfig"; path = "Target Support Files/Pods-TravelWise/Pods-TravelWise.release.xcconfig"; sourceTree = "<group>"; };
 		7E1ECB182454B734004BF45B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7E4DFE6D2456AE05005E11C4 /* MyPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlacesViewController.swift; sourceTree = "<group>"; };
 		7E6B6556245661B300AF3414 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		7E6B65582456622800AF3414 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		7E977FD92456088B007953BA /* LandmarkInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkInfoViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				7EB68D282454A2E9005F56FF /* SceneDelegate.swift */,
 				7EB68D2A2454A2E9005F56FF /* ViewController.swift */,
 				7E977FD92456088B007953BA /* LandmarkInfoViewController.swift */,
+				7E4DFE6D2456AE05005E11C4 /* MyPlacesViewController.swift */,
 				7EB68D2C2454A2E9005F56FF /* Main.storyboard */,
 				7EB68D2F2454A2EF005F56FF /* Assets.xcassets */,
 				7EB68D312454A2EF005F56FF /* LaunchScreen.storyboard */,
@@ -240,6 +243,7 @@
 				7E977FDA2456088B007953BA /* LandmarkInfoViewController.swift in Sources */,
 				7E6B6557245661B300AF3414 /* APIKeys.swift in Sources */,
 				7EB68D2B2454A2E9005F56FF /* ViewController.swift in Sources */,
+				7E4DFE6E2456AE05005E11C4 /* MyPlacesViewController.swift in Sources */,
 				7E6B65592456622800AF3414 /* Words.swift in Sources */,
 				7EB68D272454A2E9005F56FF /* AppDelegate.swift in Sources */,
 				7EB68D292454A2E9005F56FF /* SceneDelegate.swift in Sources */,
