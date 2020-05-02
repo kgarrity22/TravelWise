@@ -12,6 +12,7 @@
 		7E4DFE702457109C005E11C4 /* LandmarkDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DFE6F2457109C005E11C4 /* LandmarkDetailTableViewController.swift */; };
 		7E4DFE74245713B4005E11C4 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DFE73245713B4005E11C4 /* Landmark.swift */; };
 		7E4DFE7624572402005E11C4 /* Landmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DFE7524572402005E11C4 /* Landmarks.swift */; };
+		7E4DFE78245DFD2E005E11C4 /* LandmarksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DFE77245DFD2E005E11C4 /* LandmarksTableViewCell.swift */; };
 		7E6B6557245661B300AF3414 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6B6556245661B300AF3414 /* APIKeys.swift */; };
 		7E6B65592456622800AF3414 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6B65582456622800AF3414 /* Words.swift */; };
 		7EB68D272454A2E9005F56FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB68D262454A2E9005F56FF /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 		7E4DFE6F2457109C005E11C4 /* LandmarkDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetailTableViewController.swift; sourceTree = "<group>"; };
 		7E4DFE73245713B4005E11C4 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		7E4DFE7524572402005E11C4 /* Landmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmarks.swift; sourceTree = "<group>"; };
+		7E4DFE77245DFD2E005E11C4 /* LandmarksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarksTableViewCell.swift; sourceTree = "<group>"; };
 		7E6B6556245661B300AF3414 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		7E6B65582456622800AF3414 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		7EB68D232454A2E9005F56FF /* TravelWise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelWise.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 				7E4DFE73245713B4005E11C4 /* Landmark.swift */,
 				7E4DFE7524572402005E11C4 /* Landmarks.swift */,
 				7E4DFE6F2457109C005E11C4 /* LandmarkDetailTableViewController.swift */,
+				7E4DFE77245DFD2E005E11C4 /* LandmarksTableViewCell.swift */,
 				7E4DFE6D2456AE05005E11C4 /* MyLandmarksViewController.swift */,
 				7EB68D2A2454A2E9005F56FF /* AddLandmarkViewController.swift */,
 				7EB68D2C2454A2E9005F56FF /* Main.storyboard */,
@@ -251,6 +254,7 @@
 				7E4DFE7624572402005E11C4 /* Landmarks.swift in Sources */,
 				7E4DFE6E2456AE05005E11C4 /* MyLandmarksViewController.swift in Sources */,
 				7E6B65592456622800AF3414 /* Words.swift in Sources */,
+				7E4DFE78245DFD2E005E11C4 /* LandmarksTableViewCell.swift in Sources */,
 				7E4DFE74245713B4005E11C4 /* Landmark.swift in Sources */,
 				7EB68D272454A2E9005F56FF /* AppDelegate.swift in Sources */,
 				7E4DFE702457109C005E11C4 /* LandmarkDetailTableViewController.swift in Sources */,

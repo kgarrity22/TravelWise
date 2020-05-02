@@ -23,7 +23,7 @@ class LandmarkDetailTableViewController: UITableViewController {
     
     var landmark: Landmark!
     
-    var regionDistance: CLLocationDistance = 10_000
+    var regionDistance: CLLocationDistance = 100_000
     
     // will need an outlet for the map view
 
@@ -73,13 +73,13 @@ class LandmarkDetailTableViewController: UITableViewController {
             landmarkHistoryTextView.isEditable = false
         }
         
-        //detectCloudLandmarks(image: landmarkImage)
+        
         updateUserInterface()
         
         
     }
     
-    // don't think I need this function if I run the UI updates in the detection function
+    
     func updateUserInterface() {
         detectCloudLandmarks(image: landmarkImage)
         

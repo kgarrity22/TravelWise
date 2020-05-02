@@ -16,6 +16,7 @@ class AddLandmarkViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var libraryButton: UIButton!
     @IBOutlet weak var identifyButton: UIButton!
+    @IBOutlet weak var choosePhotoMessageLabel: UILabel!
     
     var imagePicker = UIImagePickerController()
 
@@ -35,6 +36,7 @@ class AddLandmarkViewController: UIViewController, UIImagePickerControllerDelega
         // otherwise keep them as is
         identifyButton.isHidden = true
         
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,6 +52,7 @@ class AddLandmarkViewController: UIViewController, UIImagePickerControllerDelega
         
         dismiss(animated: true, completion: nil)
         identifyButton.isHidden = false
+        choosePhotoMessageLabel.isHidden = true
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
