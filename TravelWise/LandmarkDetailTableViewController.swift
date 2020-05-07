@@ -25,16 +25,11 @@ class LandmarkDetailTableViewController: UITableViewController {
     
     var regionDistance: CLLocationDistance = 100_000
     
-    // will need an outlet for the map view
 
     // this is the variable that will recieve the chosen image when we click "Identify" in the addlandarkviewcontroller
     // this is the only item that this viewcontroller needs to recieve
     var landmarkImage: UIImage!
-    
-    
-    
     var landmarkName = ""
-    
     
     // initialize firebase vision instance
     var vision = Vision.vision()
@@ -55,6 +50,7 @@ class LandmarkDetailTableViewController: UITableViewController {
         if landmarkImage != nil {
             self.landmark.placeImage = landmarkImage
             self.landmarkNameLabel.text = landmarkName
+            landmarkHistoryTextView.text = ""
         } else {
             landmark.loadImage {
                 self.landmarkImageView.image = self.landmark.placeImage
@@ -66,13 +62,13 @@ class LandmarkDetailTableViewController: UITableViewController {
         let region = MKCoordinateRegion(center: landmark.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
         mapView.setRegion(region, animated: true)
         
-        // if nobody has entered anything yet, put a message in there
-        if landmarkHistoryTextView.text == "Nobody has entered historical information yet. Be the first to contribute!" {
-            landmarkHistoryTextView.isEditable = true
-        } else {
-            landmarkHistoryTextView.isEditable = false
-        }
-        
+//        // if nobody has entered anything yet, put a message in there
+//        if landmarkHistoryTextView.text == "Nobody has entered historical information yet. Be the first to contribute!" {
+//            landmarkHistoryTextView.isEditable = true
+//        } else {
+//            landmarkHistoryTextView.isEditable = false
+//        }
+        //self.landmarkHistoryTextView.text = "Looks like nobody has added historical information about \(landmarkName) yet. Be the first to contribute!"
         
         updateUserInterface()
         
@@ -84,7 +80,11 @@ class LandmarkDetailTableViewController: UITableViewController {
         detectCloudLandmarks(image: landmarkImage)
         
         landmarkNameLabel.text = landmark.landmarkName
+        if landmarkHistoryTextView.text == "" {
+            landmarkHistoryTextView.text = "Looks like nobody has added historical information about \(landmarkName) yet. Be the first to contribute!"
+        }
         landmarkHistoryTextView.text = landmark.landmarkHistory
+        //landmarkHistoryTextView.text = "Looks like nobody has added historical information about \(landmarkName) yet. Be the first to contribute!"
         landmarkImageView.image = landmark.placeImage
         
         updateMap()

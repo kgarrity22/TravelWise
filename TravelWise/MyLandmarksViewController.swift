@@ -105,8 +105,19 @@ extension MyLandmarksViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyPlacesCell", for: indexPath)
-        cell.textLabel?.text = landmarks.landmarkArray[indexPath.row].landmarkName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyPlacesCell", for: indexPath) as! LandmarksTableViewCell
+        cell.cellLandmarkNameLabel.text = landmarks.landmarkArray[indexPath.row].landmarkName
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        
+        //cell.cellCreatedOnLabel.text = formatter.string(from: landmarks.landmarkArray[indexPath.row].createdOn)
+        cell.cellCreatedOnLabel.text = "4/29/20"
+        
+        landmarks.landmarkArray[indexPath.row].loadImage {
+            cell.landmarkCellImageView.image = self.landmarks.landmarkArray[indexPath.row].placeImage
+        }
+        
+        
         return cell
     }
     
